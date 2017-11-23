@@ -2,6 +2,7 @@ import Sequelize from 'sequelize';
 
 const sequelize = new Sequelize('slack', 'postgres', 'mypass', {
   dialect: 'postgres',
+  underscored: true,
 });
 
 const models = {
