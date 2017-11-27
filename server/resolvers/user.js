@@ -22,7 +22,6 @@ export default {
       tryLogin(email, password, models, SECRET, SECRET2),
     register: async (parent, args, { models }) => {
       try {
-        console.log(args);
         const user = await models.User.create(args);
         return {
           ok: true,
