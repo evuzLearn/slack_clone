@@ -49,7 +49,6 @@ app.use(async (req, res, next) => {
       req.user = newToken;
     }
   }
-  console.log('10');
   next();
 });
 
