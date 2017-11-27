@@ -12,4 +12,8 @@ module.exports = {
     document: 1,
     localStorage: 1,
   },
+  parser: 'babel-eslint',
+  env: {
+    browser: 1,
+  },
 };
