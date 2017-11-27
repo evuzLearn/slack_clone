@@ -31,11 +31,12 @@ class Register extends Component {
       emailError: '',
       passwordError: '',
     });
-
     const { username, password, email } = this.state;
+    console.log(username);
     const response = await this.props.mutate({
       variables: { username, password, email },
     });
+    console.log(response);
     const { ok, errors } = response.data.register;
     if (ok) this.props.history.push('/');
     else {
@@ -56,12 +57,12 @@ class Register extends Component {
       emailError,
       passwordError,
     } = this.state;
-    
+
     const errorList = [];
     if (usernameError) errorList.push(usernameError);
     if (emailError) errorList.push(emailError);
     if (passwordError) errorList.push(passwordError);
-    
+
     return (
       <Container>
         <Header as="h2">Register</Header>
@@ -97,7 +98,11 @@ class Register extends Component {
           <Button onClick={this.onSubmit}>Submit</Button>
         </Form>
         {errorList.length ? (
-          <Message error header="There was some errors with your submission" list={errorList} />
+          <Message
+            error
+            header="There was some errors with your submission"
+            list={errorList}
+          />
         ) : null}
       </Container>
     );
